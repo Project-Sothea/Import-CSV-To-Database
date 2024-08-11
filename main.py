@@ -1,5 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
+from config import DATABASE
 
 # open output.csv file and read out the columns
 df = pd.read_csv('csv/output.csv')
@@ -144,11 +145,11 @@ heightandweight = process_table(df, csv_schema_cols["heightandweight"], "heighta
 visualacuity = process_table(df, csv_schema_cols["visualacuity"], "visualacuity")
 doctorsconsultation = process_table(df, csv_schema_cols["doctorsconsultation"], "doctorsconsultation")
 
-database_name = "patients"
-host_name = "localhost"
-user_name = "jieqiboh"
-password = "postgres"
-port_number = "5432"
+database_name = DATABASE["database_name"]
+host_name = DATABASE["host_name"]
+user_name = DATABASE["user_name"]
+password = DATABASE["password"]
+port_number = DATABASE["port_number"]
 
 # Format the connection string
 connection_string = f'postgresql+psycopg2://{user_name}:{password}@{host_name}:{port_number}/{database_name}'
