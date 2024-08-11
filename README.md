@@ -14,7 +14,7 @@ Some desired properties of the import to DB feature include:
 2. Install the required libraries.
 3. Update the database connection details.
 4. Place the exported CSV file in the /csv directory.
-5. Run the script.
+5. Run the script by doing `python3 main.py`.
 
 ### CAUTION
 - In order to prevent accidentally running the script and resetting the database, the script will only work if the existing tables are cleared.
